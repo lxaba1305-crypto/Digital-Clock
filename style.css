@@ -53,9 +53,9 @@ h1 {
 }
 
 .ms {
-    font-size: 0.7em;
+    font-size: 0.65em;
     vertical-align: super;
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 button {
@@ -73,4 +73,6 @@ button:hover {
     color: #121212;
 }
 
-
+button + button {
+    margin-left: 1rem;
+}
