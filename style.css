@@ -43,6 +43,7 @@ body {
     min-height: 100vh;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1 {
@@ -66,6 +67,7 @@ button {
     background: transparent;
     color: #f2b705;
     cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 button:hover {
@@ -75,4 +77,59 @@ button:hover {
 
 button + button {
     margin-left: 1rem;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .clock {
+    background-color: #1c1c1c;
+    border-color: #f2b705;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode #time {
+    color: #f2b705;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode button {
+    border-color: #f2b705;
+    color: #f2b705;
+    background: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Light mode styles */
+body.light-mode {
+    background-color: #f9f9f9;
+    color: #121212;
+}
+
+body.light-mode .clock {
+    background-color: #ffffff;
+    border-color: #f2b705;
+    box-shadow: 0 20px 40px rgba(242, 183, 5, 0.4);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.light-mode #time {
+    color: #f2b705;
+    transition: color 0.3s ease;
+}
+
+body.light-mode button {
+    border-color: #f2b705;
+    color: #f2b705;
+    background: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body.light-mode button:hover {
+    background-color: #f2b705;
+    color: #ffffff;
 }

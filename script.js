@@ -4,6 +4,8 @@ const mainDate = document.querySelector('p');
 let is24HourFormat = false;
 let showMilliseconds = true;
 
+let theme = localStorage.getItem('theme') || 'light';
+
 function updateTimeAndDate() {
     const now = new Date();
 
@@ -53,3 +55,25 @@ toggleFormatButton.addEventListener('click', () => {
     is24HourFormat = !is24HourFormat;
     updateTimeAndDate();
 });
+
+const toggleThemeButton = document.getElementById('toggle-theme');
+toggleThemeButton.addEventListener('click', () => {
+    if (theme === 'dark') {
+        theme = 'light';
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add('light-mode');
+    } else {
+        theme = 'dark';
+        document.body.classList.remove('light-mode');
+        document.body.classList.add('dark-mode');
+    }
+    localStorage.setItem('theme', theme);
+});
+
+if (theme === 'dark') {
+    document.body.classList.add('dark-mode');
+    document.body.classList.remove('light-mode');
+} else {
+    document.body.classList.add('light-mode');
+    document.body.classList.remove('dark-mode');
+}
